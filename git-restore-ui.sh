@@ -2,6 +2,9 @@
 
 STAGED_FILES=$(git --no-pager diff --name-only --cached --diff-filter=AM)
 
+ERROR_MSG="files to restore don´t exist"
+FILES_TO_RESTORE_MSG="files to restore:"
+
 if [[ $STAGED_FILES ]]; then
     let COUNTER=0
     LINE=$(git --no-pager diff --name-only --cached --diff-filter=AM | 
@@ -12,8 +15,8 @@ if [[ $STAGED_FILES ]]; then
            done
           )
     echo $LINE;
-    SELECTED_STAGED_FILES=$(echo $LINE | xargs dialog --stdout --checklist "files to restore:" 0 0 0)
+    SELECTED_STAGED_FILES=$(echo $LINE | xargs dialog --stdout --checklist $FILES_TO_RESTORE_MSG 0 0 0)
     echo $SELECTED_STAGED_FILES | xargs git restore --staged
 else
-    echo  "files to restore don´t exist"
+    echo $ERROR_MSG
 fi
