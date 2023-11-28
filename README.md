@@ -44,7 +44,8 @@ if [[ $STAGED_FILES ]]; then
     echo $LINE;
     SELECTED_STAGED_FILES=$(echo $LINE | xargs dialog --stdout --checklist $FILES_TO_RESTORE_MSG 0 0 0)
     echo $SELECTED_STAGED_FILES | xargs git restore --staged
+    [ ! -z "$SELECTED_STAGED_FILES" ] && echo $SELECTED_STAGED_FILES | xargs git restore --staged || echo "🟡 You did not select any file to restore"
 else
-    echo  $ERROR_MSG
+    echo $ERROR_MSG
 fi
 ```
