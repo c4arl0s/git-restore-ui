@@ -22,7 +22,7 @@ You just run the script without any parameter
 ./git-restore-ui.sh
 ```
 
-<img width="1624" alt="Screen Shot 2022-05-10 at 8 54 56 p m" src="https://user-images.githubusercontent.com/24994818/167753922-98e4a7a0-e0d4-495f-bb8f-b2eef3dd61a1.png">
+<img width="1624" alt="Screenshot 2023-11-29 at 9 08 06 p m" src="https://github.com/c4arl0s/git-add-with-extension-ui/assets/24994818/e8481b06-ef5d-4e67-9903-968cf8a3a268">
 
 ```bash
 #!/usr/bin/env bash
